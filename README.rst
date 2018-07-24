@@ -1,37 +1,38 @@
-====================
-Git log to timesheet
-====================
+# Git log to timesheet
+
+First you need to install git standup
+## Install
+
+You can install `git-standup` using one of the options listed below
+
+| Source | Command |
+| --- | --- |
+| curl | `curl -L https://raw.githubusercontent.com/kamranahmedse/git-standup/master/installer.sh \| sudo sh` |
+| npm | `npm install -g git-standup` |
+| brew | `brew update && brew install git-standup` |
+| aur | `pacaur -S git-standup-git` |
+| manual | Clone and run `make install` |  
+
+## Usage
+
+Simply run it in your project directory and it will give you the output from the last working day
+
+```shell
+git standup
+```
+for previous x days
+```shell
+git standup -d x
+```
+Install git-log-to-timesheet
+
+## Install
 
 
-.. image:: https://img.shields.io/pypi/v/git_log_to_timesheet.svg
-        :target: https://pypi.python.org/pypi/git_log_to_timesheet
-
-.. image:: https://img.shields.io/travis/sbimochan/git_log_to_timesheet.svg
-        :target: https://travis-ci.org/sbimochan/git_log_to_timesheet
-
-.. image:: https://readthedocs.org/projects/git-log-to-timesheet/badge/?version=latest
-        :target: https://git-log-to-timesheet.readthedocs.io/en/latest/?badge=latest
-        :alt: Documentation Status
-
-
-
-
-Transform result from git standup into serialized output so that it can be saved into your timesheet message box.
-
-
-* Free software: MIT license
-* Documentation: https://git-log-to-timesheet.readthedocs.io.
-
-
-Features
---------
-
-* TODO
-
-Credits
--------
-
-This package was created with Cookiecutter_ and the `audreyr/cookiecutter-pypackage`_ project template.
-
-.. _Cookiecutter: https://github.com/audreyr/cookiecutter
-.. _`audreyr/cookiecutter-pypackage`: https://github.com/audreyr/cookiecutter-pypackage
+## Usage
+Simply copy the result produced by git standup and dump using git-log-to-timesheet
+```shell
+gltt  "cbb99f8e - Change Logic for datetime (14 minutes ago) <sbimochan>
+     10237353 - Implement logic (47 minutes ago) <sbimochan>"
+```
+The result produced can then be pasted to your timesheet.
